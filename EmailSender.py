@@ -1,12 +1,17 @@
 import smtplib
 
+with open("emailProperties.txt", "r") as f:
+	content = f.readlines()
 
+emailFrom = content[0]
+emailUser = content[1]
+emailPasswrd = content[2]
 
-FROM = "*" # add sender email adress
+FROM = emailFrom
 TO = ["tweet@tweetymail.com"] # must be a list
 
-username = '*' #add username
-password = '*' #add password 
+username = emailUser
+password = emailPasswrd 
 
 SUBJECT = "This"
 
